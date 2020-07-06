@@ -32,7 +32,7 @@ class SignInForm extends Component {
     // should be taken to home page upon login
     }
 
-  }
+  
   canBeSubmitted() {
     const { email, password } = this.state;
     return email.length > 0 && password.length > 6;
