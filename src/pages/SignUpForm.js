@@ -37,7 +37,9 @@ class SignUpForm extends Component {
   handleSubmit(e) {
       
     // should be taken to sign-in page after register
-
+    <Router>
+      <Route/>
+    </Router>
     }
   }
   canBeSubmitted() {
