@@ -26,7 +26,7 @@ class MainArea extends Component {
       
         // should have a NavBar component
         // should display the list of bikes
-        
+        <NavBar/>
       </div>
 
     );

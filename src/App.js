@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
 import Home from './pages/home2';
@@ -15,15 +15,15 @@ class App extends Component {
         <div className="App">
           
           <div className="App__Form">
-            
-              <Route exact path="/" component={SignUpForm}></Route>
+            <Switch>
               <Route path="/sign-in" component={SignInForm} ></Route>
+              <Route exact strict path="/" component={SignUpForm}></Route>
               <Route path="/home" component={Home}></Route>
               <Route path="/mainArea" component={MainArea}></Route>
               <Route path="/checkout" component={Checkout}></Route>
               <Route path="/myBookings" component={MyBookings}></Route>
               <Route path="/myBookings1" component={MyBookings1}></Route>
-
+              </Switch>
           </div>
 
         </div>

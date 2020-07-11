@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../App.css';
+import {useSelector} from 'react-redux'
 //import Button from '../components/Button';
 
 class SignInForm extends Component {
@@ -28,8 +29,13 @@ class SignInForm extends Component {
   }
 
   handleSubmit(e) {
-
+    e.preventDefault();
     // should be taken to home page upon login
+    // let email=useSelector(value=>value.email)
+    // let pwd=useSelector(value=>value.password)
+    // console.log('email', email)
+    // if(this.state.email=== email && this.state.password===pwd )
+    this.props.history.push('/home')
     }
 
   
@@ -51,7 +57,12 @@ class SignInForm extends Component {
 
         <form onSubmit={this.handleSubmit} className="FormFields">
           
-        //it should have fields like first email, password and submit button
+        {/* /it should have fields like first email, password and submit button */}
+        <label>Email</label>
+        <input type='text' name='email' onChange={this.handleChange}></input><br/>
+        <label>Password</label>
+        <input type='password' name='password' onChange={this.handleChange}></input><br/>
+        <input disabled={!isEnabled} type='submit' ></input>
         
         </form>
       </div>
