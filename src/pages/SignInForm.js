@@ -5,17 +5,14 @@ import {useSelector} from 'react-redux'
 //import Button from '../components/Button';
 
 class SignInForm extends Component {
-  constructor() {
+  constructor(props) {
     super();
-
     this.state = {
       email: '',
       password: '',
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleChange(e) {
@@ -31,11 +28,12 @@ class SignInForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     // should be taken to home page upon login
-    // let email=useSelector(value=>value.email)
-    // let pwd=useSelector(value=>value.password)
-    // console.log('email', email)
-    // if(this.state.email=== email && this.state.password===pwd )
+    let email=this.props.location.detail.email
+    let pwd=this.props.location.detail.password
+    console.log('email', email, pwd)
+    if(this.state.email=== email && this.state.password===pwd )
     this.props.history.push('/home')
+    else alert('Incorrect email/password')
     }
 
   

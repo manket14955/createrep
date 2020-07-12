@@ -28,11 +28,24 @@ class Checkout extends Component {
     return (
       <div>
         
-        // should have a NavBar component
-        // should display Card with the details of the bike which is selected. It should have two buttons i.e, confirm booking button and go back buttton
-        
+       <NavBar/>
+       <Card className='cardName'>
+       <CardBody>
+        <CardImg> </CardImg>
+        {/* <CardTitle>{this.props.propdata.location.name} </CardTitle> */}
+        <CardSubtitle>{this.props.bikes.model}</CardSubtitle>
+        <CardText>{this.props.bikes.description}</CardText>
+        </CardBody>
+       </Card>
+      <Button onClick={this.confirmClick}>Confirm Booking</Button>
+      <Button style={btnstyle} onClick={this.goBackClick}>Go Back </Button>
       </div>
     );
   }
 }
 export default Checkout;
+
+
+  // should have a NavBar component
+  // should display Card with the details of the bike which is selected. It should have two buttons i.e, confirm booking button and go back buttton
+       

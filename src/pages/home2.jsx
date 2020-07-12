@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
+import {Button} from 'reactstrap'
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from './NavBar.jsx';
 class Home extends Component {
@@ -23,13 +24,13 @@ class Home extends Component {
   handleChangeStart(date) {
     this.setState({
       startDate: date
-    });
+    }, ()=> console.log(this.state.startDate));
   }
 
   handleChangeEnd(date) {
     this.setState({
       endDate: date
-    });
+    }, () => console.log(this.state.endDate));
   }
 
   render() {
@@ -37,8 +38,8 @@ class Home extends Component {
       <div>
         <NavBar />
         <DatePicker onSelect={this.handleChangeStart}>{this.state.startDate}</DatePicker><br/>
-        <DatePicker onSelect={this.handleChangeEnd}>{this.state.endDate}</DatePicker>
-        <input type='button' value='Search' onClick={this.handleClick}/>
+        <DatePicker onSelect={this.handleChangeEnd}>{this.state.endDate}</DatePicker><br/>
+        <Button onClick={this.handleClick}></Button>
       </div>
 
     );

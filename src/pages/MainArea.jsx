@@ -16,7 +16,7 @@ class MainArea extends Component {
     let bikeCards = this.state.bike.map(bikes => {
       return (
         <Col sm="4" style={{ marginBottom: 10 }}>
-          <BikesCard bikes={bikes} propdata={this.props} />
+          <BikesCard bikes={this.state.bike} propdata={this.props} />
         </Col>
       )
     }
@@ -27,6 +27,7 @@ class MainArea extends Component {
         // should have a NavBar component
         // should display the list of bikes
         <NavBar/>
+        {bikeCards}
       </div>
 
     );

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router} from 'react-router-dom'
-import Route from 'react-router-dom/Route'
 import { NavLink } from 'react-router-dom';
 import '../App.css';
 class SignUpForm extends Component {
@@ -40,7 +38,10 @@ class SignUpForm extends Component {
     // should be taken to sign-in page after register  //window.location.href in react
     // const login=(email,password)=>{ return {type :'LOGIN'}}
     // useDispatch(login(this.state.email, this.state.password))
-    this.props.history.push('/sign-in')
+    this.props.history.push({pathname :'/sign-in', detail : {
+      email: this.state.email,
+      password: this.state.password
+    }})
 
   }
   canBeSubmitted() {
