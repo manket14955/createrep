@@ -23,9 +23,6 @@ class MainArea extends Component {
     )
     return (
       <div>
-      
-        // should have a NavBar component
-        // should display the list of bikes
         <NavBar/>
         {bikeCards}
       </div>
@@ -35,3 +32,7 @@ class MainArea extends Component {
   }
 }
 export default MainArea;
+
+
+        // should have a NavBar component
+        // should display the list of bikes

@@ -10,13 +10,12 @@ class BikesCard extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(e, model) {
+  handleClick() {
     console.log(this.props.bikes)
-    console.log('model', model)
-    // console.log(this.props.propdata)
-    this.props.propdata.history.push({pathname :`/Checkout`
-  })
-  }
+    this.props.propdata.history.push(
+    {pathname :'/Checkout', detail : this.props.bikes})
+  } 
+  
 
   render() {
     return (
@@ -27,7 +26,7 @@ class BikesCard extends Component {
             <CardTitle>{this.props.bikes.name}</CardTitle>
             <CardSubtitle>{this.props.bikes.model}</CardSubtitle>
             <CardText>{this.props.bikes.description}</CardText>
-            <Button onClick={this.handleClick(this.props.bikes.model)}>Book</Button>
+            <Button onClick={this.handleClick}>Book</Button>
           </CardBody>
         </Card>   
       </div>

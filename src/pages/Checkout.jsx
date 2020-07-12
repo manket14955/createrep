@@ -25,6 +25,11 @@ class Checkout extends Component {
 
   render() {
     let btnstyle = "10px 0%";
+    console.log(this.props)
+    console.log(this.props.propdata)
+    console.log(this.props.propdata.location)
+    console.log(this.props.propdata.location.detail)
+
     return (
       <div>
         
@@ -32,7 +37,7 @@ class Checkout extends Component {
        <Card className='cardName'>
        <CardBody>
         <CardImg> </CardImg>
-        {/* <CardTitle>{this.props.propdata.location.name} </CardTitle> */}
+        <CardTitle>{this.props.propdata.location.detail.name} </CardTitle>
         <CardSubtitle>{this.props.bikes.model}</CardSubtitle>
         <CardText>{this.props.bikes.description}</CardText>
         </CardBody>
